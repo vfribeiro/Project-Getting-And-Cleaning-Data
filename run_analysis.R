@@ -1,5 +1,5 @@
 # R Script - run_analysis.R
-# Coursera Course Getting and Cleaning Data Project
+# Coursera Getting and Cleaning Data Course Project
 # for additional info, check README.md and CodeBook.md
 
 ##### SESSION A : Reading data and sanity checks

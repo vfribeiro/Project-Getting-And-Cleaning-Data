@@ -1,7 +1,5 @@
 # CodeBook - Getting and Cleaning Data - Project
 
----
-
 ## Summary
 
 This CodeBook describes the variables, the data, and work done to clean up a dataset - [Human Activity Recognition Using Smartphones](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ) - according the 5 requests provided by the **Getting and Cleaning Data Course Project Instructions**.

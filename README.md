@@ -1,7 +1,5 @@
 # Project - Coursera Getting and Cleaning Data
 
----
-
 ## Summary
 This repository contains R scripts, files and data files related to the project of the Coursera course **Getting and Cleaning Data**. 
 
