@@ -67,7 +67,7 @@ img {
 <hr />
 <div id="summary" class="section level2">
 <h2>Summary</h2>
-<p>This CodeBook describes the variables, the data, and any transformations or work done to clean up a dataset - <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">Human Activity Recognition Using Smartphones</a> - following the 5 requests provided by the <strong>Getting and Cleaning Data Course Project Instructions</strong>.</p>
+<p>This CodeBook describes the variables, the data, and work done to clean up a dataset - <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">Human Activity Recognition Using Smartphones</a> - according the 5 requests provided by the <strong>Getting and Cleaning Data Course Project Instructions</strong>.</p>
 <ol style="list-style-type: decimal">
 <li>Merges the training and the test sets to create one data set.</li>
 <li>Extracts only the measurements on the mean and standard deviation for each measurement.</li>
@@ -212,22 +212,22 @@ img {
 <ul>
 <li><code>activity_Label</code> is a label for the activity performed by a volunteer. It can be any of the following six activities : WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING</li>
 <li><code>subject_ID</code> is the volunteer unique ID</li>
-<li><code>activity_ID</code> is a unique ID for each activity_Label</li>
-<li>all other features above are fully explained in <code>features_info.txt</code> in the <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">original dataset</a>. In short, these are coming from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.</li>
+<li>all other features in the table above are fully explained in <code>features_info.txt</code> file, in the <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">original dataset</a>. But in short, these are coming from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.</li>
 <li>Please, notice that <code>run_analysis.R</code> generates a new dataset with only mean and standard deviation features from the original dataset.</li>
 </ul>
 <p>Each row of the dataset <code>finalTidyDataSet.csv</code> contains the average of each feature listed above for each activity and each subject.</p>
 <p>Before generating this final dataset, project request items #1 to #5 are performed.</p>
+<hr />
 </div>
 <div id="work-performed-to-clean-up-the-data" class="section level2">
 <h2>Work performed to clean up the data</h2>
-<p>The following steps are taken by <code>run_analysis.R</code> to generate <code>finalTidyDataSet.csv</code> from the original dataset :</p>
+<p>The following steps are taken in <code>run_analysis.R</code> to generate <code>finalTidyDataSet.csv</code> from the original dataset :</p>
 <ol style="list-style-type: decimal">
 <li>All original data files are read in dataframes<br /></li>
 <li>Quick sanity checks are performed :
 <ul>
 <li>A quick sanity check is done in the train data and in the test data to verify, before merging any data by columns, if amount of rows are the same.</li>
-<li>Another quick sanity check is done in order to make sure that names that will be used for new columns (when merging data) were not used before.</li>
+<li>Another quick sanity check is done in order to make sure that names that will be used for new columns (when merging data) does not exist in `features.txt.</li>
 </ul></li>
 <li>Names to the dataframes columns are attributed according documentation :
 <ul>
@@ -235,25 +235,25 @@ img {
 <li><code>subject_train</code> and <code>subject_test</code> single column is named <code>subject_ID</code></li>
 <li><code>y_train</code> and <code>y_test</code> single columns are named <code>activity_ID</code></li>
 <li><code>activity_Labels</code> columns are named <code>activity_ID</code> and <code>activity_Label</code></li>
-<li><strong>This step addresses, in advance, project request item #4</strong></li>
+<li><strong>This step addressed, in advance, project request item #4</strong></li>
 </ul></li>
 <li>Train data is merged with column bind. The same is done by test data. Then, a row bind is performed with the two datasets generating a data frame <code>all_data</code> containing all data from <code>X_train.txt</code>, <code>X_test.txt</code>, <code>y_train.txt</code>, <code>y_test.txt</code>, <code>subject_train.txt</code>, <code>subject_test.txt</code>.
 <ul>
-<li><strong>This step addresses project request item #1</strong></li>
+<li><strong>This step addressed project request item #1</strong></li>
 </ul></li>
 <li>A new dataset <code>filtered_data</code> is create with <code>all_data</code> features that have <code>mean(</code> or <code>std(</code> (mean and standard deviation) and the columns <code>activity_ID</code>, <code>subject_ID</code>.
 <ul>
-<li><strong>This step addresses project request item #2</strong></li>
+<li><strong>This step addressed project request item #2</strong></li>
 </ul></li>
 <li>A new column <code>activity_Label</code> is added to the dataframe <code>filtered_data</code> containing the label for the respective <code>activity_ID</code> according <code>activity_labels.txt</code> (loaded in <code>activity_Labels</code> dataframe)
 <ul>
-<li><strong>This step addresses project request item #3</strong></li>
+<li><strong>This step addressed project request item #3</strong></li>
 </ul></li>
 <li><code>final_dataset</code> is generated by aggregating data frame <code>filtered_data</code> with the average of each variable for each activity and each subject.
 <ul>
 <li>Three last non-useful columns are removed from <code>final_dataset</code> as their average does not make sense or they are repeated</li>
 <li>A csv file <code>finalTidyDataSet.csv</code> is generated from <code>final_dataset</code></li>
-<li><strong>This step addresses project request item #5</strong></li>
+<li><strong>This step addressed project request item #5</strong></li>
 </ul></li>
 </ol>
 <p>Additional commentaires can be found in <code>run_analysis.R</code>.</p>
