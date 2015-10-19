@@ -84,9 +84,10 @@ final_dataset <- aggregate(filtered_data,list(activity_Label = filtered_data$act
                                               subject_ID = filtered_data$subject_ID), FUN=mean)
 # drops 3 last columns from the dataframe as they do not make sense with means or are repeated
 # notice that after removing a column, there's one less column. This is the reason the same
-# command is applied 3x
+# command  is applied 3x
 final_dataset[,69] <- NULL
 final_dataset[,69] <- NULL
 final_dataset[,69] <- NULL
 write.table(final_dataset, file = "finalTidyDataSet.txt", row.names = FALSE)
+write.csv(final_dataset, file = "finalTidyDataSet.csv", row.names = FALSE)
 

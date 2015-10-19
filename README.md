@@ -8,7 +8,7 @@ Repository files summary :
 1. `README.md` : this file. Contains a short overview.
 2. `run_analysis.R` : all R scripts built to fulfill project requests.
 3. `CodeBook.md` : describes the variables, the data, and any transformations or work performed to clean up the [original data](<https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>).
-4. `finalTidyDataSet.csv` : final tidy data set created according project request.
+4. `finalTidyDataSet.txt` : final tidy data set created according project request.
 
 ---
 
