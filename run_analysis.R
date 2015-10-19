@@ -88,5 +88,5 @@ final_dataset <- aggregate(filtered_data,list(activity_Label = filtered_data$act
 final_dataset[,69] <- NULL
 final_dataset[,69] <- NULL
 final_dataset[,69] <- NULL
-write.csv(final_dataset, file = "finalTidyDataSet.csv", row.names = FALSE)
+write.table(final_dataset, file = "finalTidyDataSet.txt", row.names = FALSE)
 
